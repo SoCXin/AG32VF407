@@ -1,7 +1,7 @@
 ﻿# [AG32VF407](https://github.com/SoCXin/AG32VF407)
 
 * [agm-micro](http://www.agm-micro.com/)：[FPGA + RISC-V(RV32IMAFC)](https://github.com/SoCXin/RISC-V)
-* [L3R3](https://github.com/SoCXin/Level)：248-384MHz (630-976CoreMark), [￥13.9 (LQFP-100)](https://item.taobao.com/item.htm?id=673084361660&spm=a1z10.5-c-s.w4002-24461620535.13.1844525cXo4UWf)
+* [L4R3](https://github.com/SoCXin/Level)：248-384MHz (630-976CoreMark), [￥13.9 (LQFP-100)](https://item.taobao.com/item.htm?id=673084361660&spm=a1z10.5-c-s.w4002-24461620535.13.1844525cXo4UWf)
 
 ## [简介](https://github.com/SoCXin/AG32VF407/wiki)
 
@@ -9,11 +9,11 @@
 
 ### 关键特性
 
-* 248 MHz RISC-V Core (RV32IMAFC)
-* 128KB SRAM + 1MB Flash
-* 3x12-bit 1Msps ADC
-* 10-bit 1Msps DAC
-* 2K逻辑单元CPLD
+* 248 MHz RISC-V (RV32IMAFC)
+* 128KB SRAM + 512KB/1MB Flash
+* 3x12-bit 1Msps ADC (3Msps in triple interleaved mode)
+* 2x10-bit 1Msps DAC
+* AGRV2K CPLD
 
 
 ## [资源收录](https://github.com/SoCXin)
@@ -21,7 +21,7 @@
 * [参考资源](src/)
 * [参考文档](docs/)
 * [参考工程](project/)
-* [官方下载](www.tcx-micro.com)
+* [官方下载](http://www.tcx-micro.com/)
 
 ### 开发环境
 
@@ -36,3 +36,7 @@
 ## [选型建议](https://github.com/SoCXin)
 
 [AG32VF407](https://github.com/SoCXin/AG32VF407) 是该系列最高配置型号，其下还包括AG32VF303、AG32VF207、AG32VF103等型号，直接PIN TO PIN兼容友商STM32Fxxx。
+
+* 型号间主要差异在MCU主频和存储配置上，外设差异在SDIO,Ethernet MAC;
+* 全系都配置[AGRV2K CPLD](http://www.tcx-micro.com/doc_26934765_5589867_0_1.html)
+
