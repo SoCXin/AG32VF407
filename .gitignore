@@ -1,0 +1,9 @@
+*.pyc
+*.hex
+*.log
+.pio/
+.vscode/
+obj
+.settings
+*.zip
+.template
