@@ -1,0 +1,1824 @@
+Analysis & Synthesis report for example_board
+Thu Aug 10 18:14:26 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Partition Status Summary
+  7. Partition for Top-Level Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Source assignments for Top-level Entity: |top
+ 10. Parameter Settings for User Entity Instance: altpll:pll_inst
+ 11. Parameter Settings for User Entity Instance: alta_gclksw:gclksw_inst
+ 12. Partition Dependent Files
+ 13. Partition "rv32" Resource Utilization by Entity
+ 14. Parameter Settings for User Entity Instance: alta_rv32:rv32
+ 15. Partition Dependent Files
+ 16. Port Connectivity Checks: "alta_rv32:rv32"
+ 17. Port Connectivity Checks: "alta_gclksw:gclksw_inst"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Aug 10 18:14:26 2023            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; example_board                                    ;
+; Top-level Entity Name              ; top                                              ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE75F29C8       ;                    ;
+; Top-level entity name                                                      ; top                ; example_board      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Maximum processors allowed for parallel compilation                        ; All                ;                    ;
+; Maximum DSP Block Usage                                                    ; 0                  ; -1 (Unlimited)     ;
+; Auto Open-Drain Pins                                                       ; Off                ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; On                 ; Off                ;
+; Maximum Number of M4K/M9K/M20K/M10K Memory Blocks                          ; 4                  ; -1 (Unlimited)     ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.83        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  83.3%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                       ;
++-----------------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                                        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++-----------------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; example_board.v                                                                         ; yes             ; User Verilog HDL File        ; D:/agmWork/AgRV_pio/platforms/AgRV/examples/example_fredLogic/logic/example_board.v     ;         ;
+; analog_ip.v                                                                             ; yes             ; User Verilog HDL File        ; D:/agmWork/AgRV_pio/platforms/AgRV/examples/example_fredLogic/logic/analog_ip.v         ;         ;
+; C:/Users/Administrator/.platformio/packages/tool-agrv_logic/etc/arch/rodinia/alta_sim.v ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/.platformio/packages/tool-agrv_logic/etc/arch/rodinia/alta_sim.v ;         ;
+; altpll.tdf                                                                              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                            ;         ;
+; aglobal130.inc                                                                          ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                        ;         ;
+; stratix_pll.inc                                                                         ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                       ;         ;
+; stratixii_pll.inc                                                                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                     ;         ;
+; cycloneii_pll.inc                                                                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                     ;         ;
+; db/altpll_2ct1.tdf                                                                      ; yes             ; Auto-Generated Megafunction  ; D:/agmWork/AgRV_pio/platforms/AgRV/examples/example_fredLogic/logic/db/altpll_2ct1.tdf  ;         ;
++-----------------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Partition Status Summary                                  ;
++----------------+-------------+----------------------------+
+; Partition Name ; Synthesized ; Reason                     ;
++----------------+-------------+----------------------------+
+; Top            ; yes         ; netlist type = Source File ;
+; rv32           ; yes         ; netlist type = Source File ;
++----------------+-------------+----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                          ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+; |top                               ; 242 (215)         ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top                                            ; work         ;
+;    |alta_gclksw:gclksw_inst|       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|alta_gclksw:gclksw_inst                    ; work         ;
+;    |altpll:pll_inst|               ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|altpll:pll_inst                            ; work         ;
+;       |altpll_2ct1:auto_generated| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|altpll:pll_inst|altpll_2ct1:auto_generated ; work         ;
+;    |analog_ip:macro_inst|          ; 27 (0)            ; 27 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|analog_ip:macro_inst                       ; work         ;
+;       |led:led_output|             ; 27 (27)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|analog_ip:macro_inst|led:led_output        ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                        ;
++------------------------------------------------------+--------------------+
+; Register name                                        ; Reason for Removal ;
++------------------------------------------------------+--------------------+
+; analog_ip:macro_inst|led:led_output|clkcount[25..31] ; Lost fanout        ;
+; Total Number of Removed Registers = 7                ;                    ;
++------------------------------------------------------+--------------------+
+
+
++---------------------------------------------------------------------+
+; Source assignments for Top-level Entity: |top                       ;
++------------------------------+-------+------+-----------------------+
+; Assignment                   ; Value ; From ; To                    ;
++------------------------------+-------+------+-----------------------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio0_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio0_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio1_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio1_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio2_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio2_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio3_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio3_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio4_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio4_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio5_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio5_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio6_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio6_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio7_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio7_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio8_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio8_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[7]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[7]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[6]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[6]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[5]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[5]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[4]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[4]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[3]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[3]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[2]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[2]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[1]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[1]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; gpio9_io_in[0]        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; gpio9_io_in[0]        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; sys_resetn            ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; sys_resetn            ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; sys_ctrl_stop         ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; sys_ctrl_stop         ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; sys_ctrl_clkSource[1] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; sys_ctrl_clkSource[1] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; sys_ctrl_clkSource[0] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; sys_ctrl_clkSource[0] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PLL_ENABLE            ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PLL_ENABLE            ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PLL_LOCK              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PLL_LOCK              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_htrans[1]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_htrans[1]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_htrans[0]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_htrans[0]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hready        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hready        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwrite        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwrite        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[31]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[31]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[30]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[30]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[29]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[29]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[28]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[28]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[27]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[27]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[26]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[26]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[25]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[25]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[24]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[24]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[23]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[23]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[22]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[22]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[21]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[21]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[20]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[20]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[19]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[19]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[18]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[18]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[17]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[17]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[16]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[16]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[15]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[15]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[14]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[14]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[13]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[13]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[12]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[12]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[11]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[11]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[10]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[10]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[9]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[9]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[8]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[8]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[7]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[7]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[6]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[6]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[5]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[5]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[4]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[4]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[3]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[3]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[2]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[2]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[1]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[1]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_haddr[0]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_haddr[0]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hsize[2]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hsize[2]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hsize[1]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hsize[1]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hsize[0]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hsize[0]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hburst[2]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hburst[2]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hburst[1]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hburst[1]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hburst[0]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hburst[0]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[31]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[31]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[30]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[30]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[29]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[29]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[28]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[28]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[27]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[27]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[26]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[26]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[25]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[25]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[24]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[24]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[23]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[23]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[22]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[22]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[21]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[21]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[20]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[20]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[19]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[19]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[18]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[18]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[17]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[17]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[16]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[16]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[15]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[15]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[14]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[14]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[13]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[13]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[12]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[12]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[11]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[11]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[10]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[10]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[9]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[9]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[8]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[8]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[7]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[7]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[6]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[6]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[5]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[5]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[4]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[4]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[3]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[3]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[2]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[2]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[1]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[1]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hwdata[0]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hwdata[0]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hreadyout     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hreadyout     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hresp         ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hresp         ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[31]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[31]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[30]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[30]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[29]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[29]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[28]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[28]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[27]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[27]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[26]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[26]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[25]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[25]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[24]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[24]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[23]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[23]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[22]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[22]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[21]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[21]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[20]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[20]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[19]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[19]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[18]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[18]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[17]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[17]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[16]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[16]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[15]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[15]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[14]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[14]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[13]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[13]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[12]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[12]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[11]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[11]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[10]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[10]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[9]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[9]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[8]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[8]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[7]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[7]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[6]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[6]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[5]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[5]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[4]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[4]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[3]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[3]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[2]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[2]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[1]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[1]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_ahb_hrdata[0]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_ahb_hrdata[0]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hsel        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hsel        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hready      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hready      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hreadyout   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hreadyout   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_htrans[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_htrans[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_htrans[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_htrans[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hsize[2]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hsize[2]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hsize[1]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hsize[1]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hsize[0]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hsize[0]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hburst[2]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hburst[2]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hburst[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hburst[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hburst[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hburst[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwrite      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwrite      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[31]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[31]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[30]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[30]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[29]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[29]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[28]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[28]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[27]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[27]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[26]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[26]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[25]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[25]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[24]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[24]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[23]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[23]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[22]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[22]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[21]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[21]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[20]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[20]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[19]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[19]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[18]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[18]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[17]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[17]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[16]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[16]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[15]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[15]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[14]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[14]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[13]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[13]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[12]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[12]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[11]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[11]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[10]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[10]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[9]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[9]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[8]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[8]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[7]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[7]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[6]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[6]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[5]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[5]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[4]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[4]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[3]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[3]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[2]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[2]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[1]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[1]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_haddr[0]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_haddr[0]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[31]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[31]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[30]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[30]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[29]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[29]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[28]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[28]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[27]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[27]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[26]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[26]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[25]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[25]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[24]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[24]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[23]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[23]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[22]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[22]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[21]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[21]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[20]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[20]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[19]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[19]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[18]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[18]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[17]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[17]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[16]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[16]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[15]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[15]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[14]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[14]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[13]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[13]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[12]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[12]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[11]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[11]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[10]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[10]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[9]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[9]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[8]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[8]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[7]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[7]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[6]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[6]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[5]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[5]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[4]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[4]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[3]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[3]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[2]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[2]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hwdata[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hwdata[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hresp       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hresp       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[31]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[31]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[30]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[30]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[29]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[29]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[28]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[28]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[27]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[27]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[26]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[26]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[25]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[25]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[24]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[24]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[23]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[23]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[22]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[22]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[21]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[21]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[20]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[20]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[19]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[19]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[18]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[18]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[17]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[17]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[16]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[16]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[15]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[15]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[14]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[14]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[13]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[13]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[12]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[12]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[11]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[11]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[10]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[10]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[9]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[9]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[8]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[8]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[7]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[7]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[6]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[6]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[5]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[5]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[4]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[4]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[3]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[3]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[2]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[2]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; slave_ahb_hrdata[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; slave_ahb_hrdata[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACBREQ[3]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACBREQ[3]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACBREQ[2]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACBREQ[2]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACBREQ[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACBREQ[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACBREQ[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACBREQ[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLBREQ[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLBREQ[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLBREQ[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLBREQ[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLBREQ[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLBREQ[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLBREQ[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLBREQ[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACSREQ[3]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACSREQ[3]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACSREQ[2]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACSREQ[2]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACSREQ[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACSREQ[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACSREQ[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACSREQ[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLSREQ[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLSREQ[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLSREQ[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLSREQ[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLSREQ[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLSREQ[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACLSREQ[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACLSREQ[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACCLR[3]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACCLR[3]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACCLR[2]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACCLR[2]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACCLR[1]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACCLR[1]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACCLR[0]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACCLR[0]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACTC[3]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACTC[3]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACTC[2]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACTC[2]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACTC[1]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACTC[1]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ext_dma_DMACTC[0]     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ext_dma_DMACTC[0]     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; local_int[3]          ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; local_int[3]          ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; local_int[2]          ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; local_int[2]          ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; local_int[1]          ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; local_int[1]          ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; local_int[0]          ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; local_int[0]          ;
++------------------------------+-------+------+-----------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: altpll:pll_inst       ;
++-------------------------------+-------------------+----------------+
+; Parameter Name                ; Value             ; Type           ;
++-------------------------------+-------------------+----------------+
+; OPERATION_MODE                ; NORMAL            ; Untyped        ;
+; PLL_TYPE                      ; AUTO              ; Untyped        ;
+; LPM_HINT                      ; UNUSED            ; Untyped        ;
+; QUALIFY_CONF_DONE             ; OFF               ; Untyped        ;
+; COMPENSATE_CLOCK              ; CLK0              ; Untyped        ;
+; SCAN_CHAIN                    ; LONG              ; Untyped        ;
+; PRIMARY_CLOCK                 ; INCLK0            ; Untyped        ;
+; INCLK0_INPUT_FREQUENCY        ; 125000            ; Signed Integer ;
+; INCLK1_INPUT_FREQUENCY        ; 0                 ; Untyped        ;
+; GATE_LOCK_SIGNAL              ; NO                ; Untyped        ;
+; GATE_LOCK_COUNTER             ; 0                 ; Untyped        ;
+; LOCK_HIGH                     ; 1                 ; Untyped        ;
+; LOCK_LOW                      ; 1                 ; Untyped        ;
+; VALID_LOCK_MULTIPLIER         ; 1                 ; Untyped        ;
+; INVALID_LOCK_MULTIPLIER       ; 5                 ; Untyped        ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF               ; Untyped        ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF               ; Untyped        ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF               ; Untyped        ;
+; SKIP_VCO                      ; OFF               ; Untyped        ;
+; SWITCH_OVER_COUNTER           ; 0                 ; Untyped        ;
+; SWITCH_OVER_TYPE              ; AUTO              ; Untyped        ;
+; FEEDBACK_SOURCE               ; EXTCLK0           ; Untyped        ;
+; BANDWIDTH                     ; 0                 ; Untyped        ;
+; BANDWIDTH_TYPE                ; AUTO              ; Untyped        ;
+; SPREAD_FREQUENCY              ; 0                 ; Untyped        ;
+; DOWN_SPREAD                   ; 0                 ; Untyped        ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF               ; Untyped        ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF               ; Untyped        ;
+; CLK9_MULTIPLY_BY              ; 0                 ; Untyped        ;
+; CLK8_MULTIPLY_BY              ; 0                 ; Untyped        ;
+; CLK7_MULTIPLY_BY              ; 0                 ; Untyped        ;
+; CLK6_MULTIPLY_BY              ; 0                 ; Untyped        ;
+; CLK5_MULTIPLY_BY              ; 1                 ; Untyped        ;
+; CLK4_MULTIPLY_BY              ; 75                ; Signed Integer ;
+; CLK3_MULTIPLY_BY              ; 75                ; Signed Integer ;
+; CLK2_MULTIPLY_BY              ; 75                ; Signed Integer ;
+; CLK1_MULTIPLY_BY              ; 75                ; Signed Integer ;
+; CLK0_MULTIPLY_BY              ; 75                ; Signed Integer ;
+; CLK9_DIVIDE_BY                ; 0                 ; Untyped        ;
+; CLK8_DIVIDE_BY                ; 0                 ; Untyped        ;
+; CLK7_DIVIDE_BY                ; 0                 ; Untyped        ;
+; CLK6_DIVIDE_BY                ; 0                 ; Untyped        ;
+; CLK5_DIVIDE_BY                ; 1                 ; Untyped        ;
+; CLK4_DIVIDE_BY                ; 6                 ; Signed Integer ;
+; CLK3_DIVIDE_BY                ; 6                 ; Signed Integer ;
+; CLK2_DIVIDE_BY                ; 6                 ; Signed Integer ;
+; CLK1_DIVIDE_BY                ; 6                 ; Signed Integer ;
+; CLK0_DIVIDE_BY                ; 6                 ; Signed Integer ;
+; CLK9_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK8_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK7_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK6_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK5_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK4_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK3_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK2_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK1_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK0_PHASE_SHIFT              ; 0                 ; Untyped        ;
+; CLK5_TIME_DELAY               ; 0                 ; Untyped        ;
+; CLK4_TIME_DELAY               ; 0                 ; Untyped        ;
+; CLK3_TIME_DELAY               ; 0                 ; Untyped        ;
+; CLK2_TIME_DELAY               ; 0                 ; Untyped        ;
+; CLK1_TIME_DELAY               ; 0                 ; Untyped        ;
+; CLK0_TIME_DELAY               ; 0                 ; Untyped        ;
+; CLK9_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK8_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK7_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK6_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK5_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK4_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK3_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK2_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK1_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK0_DUTY_CYCLE               ; 50                ; Untyped        ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped        ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped        ;
+; LOCK_WINDOW_UI                ;  0.05             ; Untyped        ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED            ; Untyped        ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED            ; Untyped        ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED            ; Untyped        ;
+; DPA_MULTIPLY_BY               ; 0                 ; Untyped        ;
+; DPA_DIVIDE_BY                 ; 1                 ; Untyped        ;
+; DPA_DIVIDER                   ; 0                 ; Untyped        ;
+; EXTCLK3_MULTIPLY_BY           ; 1                 ; Untyped        ;
+; EXTCLK2_MULTIPLY_BY           ; 1                 ; Untyped        ;
+; EXTCLK1_MULTIPLY_BY           ; 1                 ; Untyped        ;
+; EXTCLK0_MULTIPLY_BY           ; 1                 ; Untyped        ;
+; EXTCLK3_DIVIDE_BY             ; 1                 ; Untyped        ;
+; EXTCLK2_DIVIDE_BY             ; 1                 ; Untyped        ;
+; EXTCLK1_DIVIDE_BY             ; 1                 ; Untyped        ;
+; EXTCLK0_DIVIDE_BY             ; 1                 ; Untyped        ;
+; EXTCLK3_PHASE_SHIFT           ; 0                 ; Untyped        ;
+; EXTCLK2_PHASE_SHIFT           ; 0                 ; Untyped        ;
+; EXTCLK1_PHASE_SHIFT           ; 0                 ; Untyped        ;
+; EXTCLK0_PHASE_SHIFT           ; 0                 ; Untyped        ;
+; EXTCLK3_TIME_DELAY            ; 0                 ; Untyped        ;
+; EXTCLK2_TIME_DELAY            ; 0                 ; Untyped        ;
+; EXTCLK1_TIME_DELAY            ; 0                 ; Untyped        ;
+; EXTCLK0_TIME_DELAY            ; 0                 ; Untyped        ;
+; EXTCLK3_DUTY_CYCLE            ; 50                ; Untyped        ;
+; EXTCLK2_DUTY_CYCLE            ; 50                ; Untyped        ;
+; EXTCLK1_DUTY_CYCLE            ; 50                ; Untyped        ;
+; EXTCLK0_DUTY_CYCLE            ; 50                ; Untyped        ;
+; VCO_MULTIPLY_BY               ; 0                 ; Untyped        ;
+; VCO_DIVIDE_BY                 ; 0                 ; Untyped        ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                 ; Untyped        ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                 ; Untyped        ;
+; VCO_MIN                       ; 0                 ; Untyped        ;
+; VCO_MAX                       ; 0                 ; Untyped        ;
+; VCO_CENTER                    ; 0                 ; Untyped        ;
+; PFD_MIN                       ; 0                 ; Untyped        ;
+; PFD_MAX                       ; 0                 ; Untyped        ;
+; M_INITIAL                     ; 0                 ; Untyped        ;
+; M                             ; 0                 ; Untyped        ;
+; N                             ; 1                 ; Untyped        ;
+; M2                            ; 1                 ; Untyped        ;
+; N2                            ; 1                 ; Untyped        ;
+; SS                            ; 1                 ; Untyped        ;
+; C0_HIGH                       ; 0                 ; Untyped        ;
+; C1_HIGH                       ; 0                 ; Untyped        ;
+; C2_HIGH                       ; 0                 ; Untyped        ;
+; C3_HIGH                       ; 0                 ; Untyped        ;
+; C4_HIGH                       ; 0                 ; Untyped        ;
+; C5_HIGH                       ; 0                 ; Untyped        ;
+; C6_HIGH                       ; 0                 ; Untyped        ;
+; C7_HIGH                       ; 0                 ; Untyped        ;
+; C8_HIGH                       ; 0                 ; Untyped        ;
+; C9_HIGH                       ; 0                 ; Untyped        ;
+; C0_LOW                        ; 0                 ; Untyped        ;
+; C1_LOW                        ; 0                 ; Untyped        ;
+; C2_LOW                        ; 0                 ; Untyped        ;
+; C3_LOW                        ; 0                 ; Untyped        ;
+; C4_LOW                        ; 0                 ; Untyped        ;
+; C5_LOW                        ; 0                 ; Untyped        ;
+; C6_LOW                        ; 0                 ; Untyped        ;
+; C7_LOW                        ; 0                 ; Untyped        ;
+; C8_LOW                        ; 0                 ; Untyped        ;
+; C9_LOW                        ; 0                 ; Untyped        ;
+; C0_INITIAL                    ; 0                 ; Untyped        ;
+; C1_INITIAL                    ; 0                 ; Untyped        ;
+; C2_INITIAL                    ; 0                 ; Untyped        ;
+; C3_INITIAL                    ; 0                 ; Untyped        ;
+; C4_INITIAL                    ; 0                 ; Untyped        ;
+; C5_INITIAL                    ; 0                 ; Untyped        ;
+; C6_INITIAL                    ; 0                 ; Untyped        ;
+; C7_INITIAL                    ; 0                 ; Untyped        ;
+; C8_INITIAL                    ; 0                 ; Untyped        ;
+; C9_INITIAL                    ; 0                 ; Untyped        ;
+; C0_MODE                       ; BYPASS            ; Untyped        ;
+; C1_MODE                       ; BYPASS            ; Untyped        ;
+; C2_MODE                       ; BYPASS            ; Untyped        ;
+; C3_MODE                       ; BYPASS            ; Untyped        ;
+; C4_MODE                       ; BYPASS            ; Untyped        ;
+; C5_MODE                       ; BYPASS            ; Untyped        ;
+; C6_MODE                       ; BYPASS            ; Untyped        ;
+; C7_MODE                       ; BYPASS            ; Untyped        ;
+; C8_MODE                       ; BYPASS            ; Untyped        ;
+; C9_MODE                       ; BYPASS            ; Untyped        ;
+; C0_PH                         ; 0                 ; Untyped        ;
+; C1_PH                         ; 0                 ; Untyped        ;
+; C2_PH                         ; 0                 ; Untyped        ;
+; C3_PH                         ; 0                 ; Untyped        ;
+; C4_PH                         ; 0                 ; Untyped        ;
+; C5_PH                         ; 0                 ; Untyped        ;
+; C6_PH                         ; 0                 ; Untyped        ;
+; C7_PH                         ; 0                 ; Untyped        ;
+; C8_PH                         ; 0                 ; Untyped        ;
+; C9_PH                         ; 0                 ; Untyped        ;
+; L0_HIGH                       ; 1                 ; Untyped        ;
+; L1_HIGH                       ; 1                 ; Untyped        ;
+; G0_HIGH                       ; 1                 ; Untyped        ;
+; G1_HIGH                       ; 1                 ; Untyped        ;
+; G2_HIGH                       ; 1                 ; Untyped        ;
+; G3_HIGH                       ; 1                 ; Untyped        ;
+; E0_HIGH                       ; 1                 ; Untyped        ;
+; E1_HIGH                       ; 1                 ; Untyped        ;
+; E2_HIGH                       ; 1                 ; Untyped        ;
+; E3_HIGH                       ; 1                 ; Untyped        ;
+; L0_LOW                        ; 1                 ; Untyped        ;
+; L1_LOW                        ; 1                 ; Untyped        ;
+; G0_LOW                        ; 1                 ; Untyped        ;
+; G1_LOW                        ; 1                 ; Untyped        ;
+; G2_LOW                        ; 1                 ; Untyped        ;
+; G3_LOW                        ; 1                 ; Untyped        ;
+; E0_LOW                        ; 1                 ; Untyped        ;
+; E1_LOW                        ; 1                 ; Untyped        ;
+; E2_LOW                        ; 1                 ; Untyped        ;
+; E3_LOW                        ; 1                 ; Untyped        ;
+; L0_INITIAL                    ; 1                 ; Untyped        ;
+; L1_INITIAL                    ; 1                 ; Untyped        ;
+; G0_INITIAL                    ; 1                 ; Untyped        ;
+; G1_INITIAL                    ; 1                 ; Untyped        ;
+; G2_INITIAL                    ; 1                 ; Untyped        ;
+; G3_INITIAL                    ; 1                 ; Untyped        ;
+; E0_INITIAL                    ; 1                 ; Untyped        ;
+; E1_INITIAL                    ; 1                 ; Untyped        ;
+; E2_INITIAL                    ; 1                 ; Untyped        ;
+; E3_INITIAL                    ; 1                 ; Untyped        ;
+; L0_MODE                       ; BYPASS            ; Untyped        ;
+; L1_MODE                       ; BYPASS            ; Untyped        ;
+; G0_MODE                       ; BYPASS            ; Untyped        ;
+; G1_MODE                       ; BYPASS            ; Untyped        ;
+; G2_MODE                       ; BYPASS            ; Untyped        ;
+; G3_MODE                       ; BYPASS            ; Untyped        ;
+; E0_MODE                       ; BYPASS            ; Untyped        ;
+; E1_MODE                       ; BYPASS            ; Untyped        ;
+; E2_MODE                       ; BYPASS            ; Untyped        ;
+; E3_MODE                       ; BYPASS            ; Untyped        ;
+; L0_PH                         ; 0                 ; Untyped        ;
+; L1_PH                         ; 0                 ; Untyped        ;
+; G0_PH                         ; 0                 ; Untyped        ;
+; G1_PH                         ; 0                 ; Untyped        ;
+; G2_PH                         ; 0                 ; Untyped        ;
+; G3_PH                         ; 0                 ; Untyped        ;
+; E0_PH                         ; 0                 ; Untyped        ;
+; E1_PH                         ; 0                 ; Untyped        ;
+; E2_PH                         ; 0                 ; Untyped        ;
+; E3_PH                         ; 0                 ; Untyped        ;
+; M_PH                          ; 0                 ; Untyped        ;
+; C1_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C2_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C3_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C4_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C5_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C6_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C7_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C8_USE_CASC_IN                ; OFF               ; Untyped        ;
+; C9_USE_CASC_IN                ; OFF               ; Untyped        ;
+; CLK0_COUNTER                  ; G0                ; Untyped        ;
+; CLK1_COUNTER                  ; G0                ; Untyped        ;
+; CLK2_COUNTER                  ; G0                ; Untyped        ;
+; CLK3_COUNTER                  ; G0                ; Untyped        ;
+; CLK4_COUNTER                  ; G0                ; Untyped        ;
+; CLK5_COUNTER                  ; G0                ; Untyped        ;
+; CLK6_COUNTER                  ; E0                ; Untyped        ;
+; CLK7_COUNTER                  ; E1                ; Untyped        ;
+; CLK8_COUNTER                  ; E2                ; Untyped        ;
+; CLK9_COUNTER                  ; E3                ; Untyped        ;
+; L0_TIME_DELAY                 ; 0                 ; Untyped        ;
+; L1_TIME_DELAY                 ; 0                 ; Untyped        ;
+; G0_TIME_DELAY                 ; 0                 ; Untyped        ;
+; G1_TIME_DELAY                 ; 0                 ; Untyped        ;
+; G2_TIME_DELAY                 ; 0                 ; Untyped        ;
+; G3_TIME_DELAY                 ; 0                 ; Untyped        ;
+; E0_TIME_DELAY                 ; 0                 ; Untyped        ;
+; E1_TIME_DELAY                 ; 0                 ; Untyped        ;
+; E2_TIME_DELAY                 ; 0                 ; Untyped        ;
+; E3_TIME_DELAY                 ; 0                 ; Untyped        ;
+; M_TIME_DELAY                  ; 0                 ; Untyped        ;
+; N_TIME_DELAY                  ; 0                 ; Untyped        ;
+; EXTCLK3_COUNTER               ; E3                ; Untyped        ;
+; EXTCLK2_COUNTER               ; E2                ; Untyped        ;
+; EXTCLK1_COUNTER               ; E1                ; Untyped        ;
+; EXTCLK0_COUNTER               ; E0                ; Untyped        ;
+; ENABLE0_COUNTER               ; L0                ; Untyped        ;
+; ENABLE1_COUNTER               ; L0                ; Untyped        ;
+; CHARGE_PUMP_CURRENT           ; 2                 ; Untyped        ;
+; LOOP_FILTER_R                 ;  1.000000         ; Untyped        ;
+; LOOP_FILTER_C                 ; 5                 ; Untyped        ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999              ; Untyped        ;
+; LOOP_FILTER_R_BITS            ; 9999              ; Untyped        ;
+; LOOP_FILTER_C_BITS            ; 9999              ; Untyped        ;
+; VCO_POST_SCALE                ; 0                 ; Untyped        ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                 ; Untyped        ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                 ; Untyped        ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                 ; Untyped        ;
+; INTENDED_DEVICE_FAMILY        ; NONE              ; Untyped        ;
+; PORT_CLKENA0                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKENA1                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKENA2                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKENA3                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKENA4                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKENA5                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLK0                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLK1                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLK2                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_EXTCLK3                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKBAD0                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKBAD1                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLK0                     ; PORT_USED         ; Untyped        ;
+; PORT_CLK1                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_CLK2                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_CLK3                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_CLK4                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_CLK5                     ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLK6                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_CLK7                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_CLK8                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_CLK9                     ; PORT_UNUSED       ; Untyped        ;
+; PORT_SCANDATA                 ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCANDATAOUT              ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCANDONE                 ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_ACTIVECLOCK              ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKLOSS                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_INCLK1                   ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_INCLK0                   ; PORT_USED         ; Untyped        ;
+; PORT_FBIN                     ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_PLLENA                   ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_CLKSWITCH                ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_ARESET                   ; PORT_USED         ; Untyped        ;
+; PORT_PFDENA                   ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCANCLK                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCANACLR                 ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCANREAD                 ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCANWRITE                ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_LOCKED                   ; PORT_USED         ; Untyped        ;
+; PORT_CONFIGUPDATE             ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_PHASEDONE                ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_PHASESTEP                ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_PHASEUPDOWN              ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_SCANCLKENA               ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_PHASECOUNTERSELECT       ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY ; Untyped        ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY ; Untyped        ;
+; M_TEST_SOURCE                 ; 5                 ; Untyped        ;
+; C0_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C1_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C2_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C3_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C4_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C5_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C6_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C7_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C8_TEST_SOURCE                ; 5                 ; Untyped        ;
+; C9_TEST_SOURCE                ; 5                 ; Untyped        ;
+; CBXI_PARAMETER                ; altpll_2ct1       ; Untyped        ;
+; VCO_FREQUENCY_CONTROL         ; AUTO              ; Untyped        ;
+; VCO_PHASE_SHIFT_STEP          ; 0                 ; Untyped        ;
+; WIDTH_CLOCK                   ; 5                 ; Signed Integer ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                 ; Untyped        ;
+; USING_FBMIMICBIDIR_PORT       ; OFF               ; Untyped        ;
+; DEVICE_FAMILY                 ; Cyclone IV E      ; Untyped        ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED            ; Untyped        ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF               ; Untyped        ;
+; AUTO_CARRY_CHAINS             ; ON                ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS          ; OFF               ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS           ; ON                ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS        ; OFF               ; IGNORE_CASCADE ;
++-------------------------------+-------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alta_gclksw:gclksw_inst ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; coord_x        ; 0     ; Signed Integer                              ;
+; coord_y        ; 0     ; Signed Integer                              ;
+; coord_z        ; 0     ; Signed Integer                              ;
+; ENA_REG_MODE   ; 0     ; Unsigned Binary                             ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                                                                                 ;
++-----------------------------------------------------------------------------------------+--------------------+---------+----------------------------------+
+; File                                                                                    ; Location           ; Library ; Checksum                         ;
++-----------------------------------------------------------------------------------------+--------------------+---------+----------------------------------+
+; libraries/megafunctions/aglobal130.inc                                                  ; Quartus II Install ; work    ; 6fc5170a475a9c6f00c3fd7627b30d31 ;
+; libraries/megafunctions/altpll.tdf                                                      ; Quartus II Install ; work    ; f8c6da9aeecfb4ea26e5731664857545 ;
+; libraries/megafunctions/cycloneii_pll.inc                                               ; Quartus II Install ; work    ; c2ee779f089b03bc181df753ea85b3ef ;
+; libraries/megafunctions/stratix_pll.inc                                                 ; Quartus II Install ; work    ; a9a94c5b0e18105f7ae8c218a67ec9f7 ;
+; libraries/megafunctions/stratixii_pll.inc                                               ; Quartus II Install ; work    ; 6797ab505ed700f1a221e4a213e106a6 ;
+; C:/Users/Administrator/.platformio/packages/tool-agrv_logic/etc/arch/rodinia/alta_sim.v ; Absolute           ; work    ; d981b1a0c139975ef2e2358af54ceee0 ;
+; analog_ip.v                                                                             ; Project Directory  ; work    ; fa850ea3a763e146b0fa3909c1f8fd21 ;
+; db/altpll_2ct1.tdf                                                                      ; Project Directory  ; work    ; b60a53b850d2e34cc1ed9d05bab8c36d ;
+; example_board.v                                                                         ; Project Directory  ; work    ; 4db878df6e63a87296d29048a6e5cd7c ;
++-----------------------------------------------------------------------------------------+--------------------+---------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition "rv32" Resource Utilization by Entity                                                                                                                             ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |top                       ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top                ; work         ;
+;    |alta_rv32:rv32|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|alta_rv32:rv32 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alta_rv32:rv32 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; coord_x        ; 0     ; Signed Integer                     ;
+; coord_y        ; 0     ; Signed Integer                     ;
+; coord_z        ; 0     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                                                                       ;
++-----------------------------------------------------------------------------------------+----------+---------+----------------------------------+
+; File                                                                                    ; Location ; Library ; Checksum                         ;
++-----------------------------------------------------------------------------------------+----------+---------+----------------------------------+
+; C:/Users/Administrator/.platformio/packages/tool-agrv_logic/etc/arch/rodinia/alta_sim.v ; Absolute ; work    ; d981b1a0c139975ef2e2358af54ceee0 ;
++-----------------------------------------------------------------------------------------+----------+---------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alta_rv32:rv32"                                                                                                                                               ;
++--------------------+------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------+
+; Port               ; Type             ; Severity ; Details                                                                                                                               ;
++--------------------+------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------+
+; ext_resetn         ; Partition Input  ; Warning  ; Stuck at VCC. Constants will not propagate across partition boundaries                                                                ;
+; test_mode          ; Partition Input  ; Warning  ; Stuck at GND. Constants will not propagate across partition boundaries                                                                ;
+; usb0_id            ; Partition Input  ; Warning  ; Stuck at VCC. Constants will not propagate across partition boundaries                                                                ;
+; ext_int            ; Partition Input  ; Warning  ; Stuck at GND. Constants will not propagate across partition boundaries                                                                ;
+; gpio0_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio0_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio1_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio1_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio2_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio2_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio3_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio3_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio4_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio4_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio5_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio5_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio6_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio6_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio7_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio7_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio8_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio8_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio9_io_out_data  ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; gpio9_io_out_en    ; Partition Output ; Warning  ; Connected to dangling logic. Logic connected to a dangling partition output or bidir will not be optimized away.                      ;
+; sys_ctrl_hseEnable ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
+; sys_ctrl_hseBypass ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
+; sys_ctrl_sleep     ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
+; sys_ctrl_standby   ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
+; dmactive           ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
+; swj_JTAGNSW        ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
+; swj_JTAGSTATE      ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
+; swj_JTAGIR         ; Partition Output ; Warning  ; Declared by entity but not connected by instance. Logic connected to a dangling partition output or bidir will not be optimized away. ;
++--------------------+------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "alta_gclksw:gclksw_inst" ;
++--------+-------+----------+-------------------------+
+; Port   ; Type  ; Severity ; Details                 ;
++--------+-------+----------+-------------------------+
+; ena    ; Input ; Info     ; Stuck at VCC            ;
+; clkin3 ; Input ; Info     ; Explicitly unconnected  ;
++--------+-------+----------+-------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; rv32           ; 00:00:04     ;
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Aug 10 18:14:20 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off example_board -c example_board
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file example_board.v
+    Info (12023): Found entity 1: top
+Info (12021): Found 2 design units, including 2 entities, in source file analog_ip.v
+    Info (12023): Found entity 1: analog_ip
+    Info (12023): Found entity 2: led
+Info (12021): Found 54 design units, including 54 entities, in source file c:/users/administrator/.platformio/packages/tool-agrv_logic/etc/arch/rodinia/alta_sim.v
+    Info (12023): Found entity 1: alta_slice
+    Info (12023): Found entity 2: alta_clkenctrl_rst
+    Info (12023): Found entity 3: alta_clkenctrl
+    Info (12023): Found entity 4: alta_asyncctrl
+    Info (12023): Found entity 5: alta_syncctrl
+    Info (12023): Found entity 6: alta_io_gclk
+    Info (12023): Found entity 7: alta_gclksel
+    Info (12023): Found entity 8: alta_gclkgen
+    Info (12023): Found entity 9: alta_gclkgen0
+    Info (12023): Found entity 10: alta_gclkgen2
+    Info (12023): Found entity 11: alta_io
+    Info (12023): Found entity 12: alta_rio
+    Info (12023): Found entity 13: alta_srff
+    Info (12023): Found entity 14: alta_dff
+    Info (12023): Found entity 15: alta_ufm_gddd
+    Info (12023): Found entity 16: alta_dff_stall
+    Info (12023): Found entity 17: alta_srlat
+    Info (12023): Found entity 18: alta_dio
+    Info (12023): Found entity 19: alta_ufms
+    Info (12023): Found entity 20: alta_ufms_sim
+    Info (12023): Found entity 21: alta_pll
+    Info (12023): Found entity 22: alta_pllx
+    Info (12023): Found entity 23: pll_clk_trim
+    Info (12023): Found entity 24: alta_pllv
+    Info (12023): Found entity 25: alta_pllve
+    Info (12023): Found entity 26: alta_sram
+    Info (12023): Found entity 27: alta_dpram16x4
+    Info (12023): Found entity 28: alta_spram16x4
+    Info (12023): Found entity 29: alta_wram
+    Info (12023): Found entity 30: alta_bram_pulse_generator
+    Info (12023): Found entity 31: alta_bram
+    Info (12023): Found entity 32: alta_ram4k
+    Info (12023): Found entity 33: alta_boot
+    Info (12023): Found entity 34: alta_osc
+    Info (12023): Found entity 35: alta_ufml
+    Info (12023): Found entity 36: alta_jtag
+    Info (12023): Found entity 37: alta_mult
+    Info (12023): Found entity 38: alta_dff_en
+    Info (12023): Found entity 39: alta_multm_add
+    Info (12023): Found entity 40: alta_multm
+    Info (12023): Found entity 41: alta_i2c
+    Info (12023): Found entity 42: alta_spi
+    Info (12023): Found entity 43: alta_irda
+    Info (12023): Found entity 44: alta_bram9k
+    Info (12023): Found entity 45: alta_ram9k
+    Info (12023): Found entity 46: alta_mcu
+    Info (12023): Found entity 47: alta_mcu_m3
+    Info (12023): Found entity 48: alta_remote
+    Info (12023): Found entity 49: alta_saradc
+    Info (12023): Found entity 50: alta_gclksw
+    Info (12023): Found entity 51: alta_rv32
+    Info (12023): Found entity 52: alta_adc
+    Info (12023): Found entity 53: alta_dac
+    Info (12023): Found entity 54: alta_cmp
+Warning (10236): Verilog HDL Implicit Net warning at example_board.v(17): created implicit net for "PIN_HSE_in"
+Warning (10236): Verilog HDL Implicit Net warning at example_board.v(20): created implicit net for "PIN_HSI_in"
+Warning (10236): Verilog HDL Implicit Net warning at example_board.v(23): created implicit net for "PIN_OSC_in"
+Warning (10236): Verilog HDL Implicit Net warning at example_board.v(69): created implicit net for "bus_clk"
+Warning (10236): Verilog HDL Implicit Net warning at example_board.v(80): created implicit net for "sys_clk"
+Warning (10236): Verilog HDL Implicit Net warning at example_board.v(200): created implicit net for "usb0_xcvr_clk"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(165): created implicit net for "ena_reg"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(189): created implicit net for "ena_int"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(190): created implicit net for "ena_reg"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(460): created implicit net for "outreg_h"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(461): created implicit net for "outreg_l"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(469): created implicit net for "oe_reg_h"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(470): created implicit net for "oe_reg_l"
+Warning (10236): Verilog HDL Implicit Net warning at alta_sim.v(2897): created implicit net for "dffOut"
+Warning (10222): Verilog HDL Parameter Declaration warning at alta_sim.v(2390): Parameter Declaration in module "alta_bram_pulse_generator" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at example_board.v(23): object "PIN_OSC_in" assigned a value but never read
+Info (12128): Elaborating entity "altpll" for hierarchy "altpll:pll_inst"
+Info (12130): Elaborated megafunction instantiation "altpll:pll_inst"
+Info (12133): Instantiated megafunction "altpll:pll_inst" with the following parameter:
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "6"
+    Info (12134): Parameter "clk0_multiply_by" = "75"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk1_divide_by" = "6"
+    Info (12134): Parameter "clk1_multiply_by" = "75"
+    Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "clk2_divide_by" = "6"
+    Info (12134): Parameter "clk2_multiply_by" = "75"
+    Info (12134): Parameter "clk2_phase_shift" = "0"
+    Info (12134): Parameter "clk3_divide_by" = "6"
+    Info (12134): Parameter "clk3_multiply_by" = "75"
+    Info (12134): Parameter "clk3_phase_shift" = "0"
+    Info (12134): Parameter "clk4_divide_by" = "6"
+    Info (12134): Parameter "clk4_multiply_by" = "75"
+    Info (12134): Parameter "clk4_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "125000"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_areset" = "PORT_USED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_locked" = "PORT_USED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_2ct1.tdf
+    Info (12023): Found entity 1: altpll_2ct1
+Info (12128): Elaborating entity "altpll_2ct1" for hierarchy "altpll:pll_inst|altpll_2ct1:auto_generated"
+Info (12128): Elaborating entity "alta_gclksw" for hierarchy "alta_gclksw:gclksw_inst"
+Info (12128): Elaborating entity "analog_ip" for hierarchy "analog_ip:macro_inst"
+Warning (10034): Output port "mem_ahb_hrdata" at analog_ip.v(17) has no driver
+Warning (10034): Output port "slave_ahb_htrans" at analog_ip.v(21) has no driver
+Warning (10034): Output port "slave_ahb_hsize" at analog_ip.v(22) has no driver
+Warning (10034): Output port "slave_ahb_hburst" at analog_ip.v(23) has no driver
+Warning (10034): Output port "slave_ahb_haddr" at analog_ip.v(25) has no driver
+Warning (10034): Output port "slave_ahb_hwdata" at analog_ip.v(26) has no driver
+Warning (10034): Output port "ext_dma_DMACBREQ" at analog_ip.v(29) has no driver
+Warning (10034): Output port "ext_dma_DMACLBREQ" at analog_ip.v(30) has no driver
+Warning (10034): Output port "ext_dma_DMACSREQ" at analog_ip.v(31) has no driver
+Warning (10034): Output port "ext_dma_DMACLSREQ" at analog_ip.v(32) has no driver
+Warning (10034): Output port "local_int" at analog_ip.v(36) has no driver
+Warning (10034): Output port "mem_ahb_hresp" at analog_ip.v(16) has no driver
+Warning (10034): Output port "slave_ahb_hsel" at analog_ip.v(18) has no driver
+Warning (10034): Output port "slave_ahb_hwrite" at analog_ip.v(24) has no driver
+Info (12128): Elaborating entity "led" for hierarchy "analog_ip:macro_inst|led:led_output"
+Info (12128): Elaborating entity "alta_rv32" for hierarchy "alta_rv32:rv32"
+Warning (10034): Output port "gpio0_io_out_data" at alta_sim.v(4071) has no driver
+Warning (10034): Output port "gpio0_io_out_en" at alta_sim.v(4072) has no driver
+Warning (10034): Output port "gpio1_io_out_data" at alta_sim.v(4074) has no driver
+Warning (10034): Output port "gpio1_io_out_en" at alta_sim.v(4075) has no driver
+Warning (10034): Output port "gpio2_io_out_data" at alta_sim.v(4085) has no driver
+Warning (10034): Output port "gpio2_io_out_en" at alta_sim.v(4086) has no driver
+Warning (10034): Output port "gpio3_io_out_data" at alta_sim.v(4088) has no driver
+Warning (10034): Output port "gpio3_io_out_en" at alta_sim.v(4089) has no driver
+Warning (10034): Output port "gpio4_io_out_data" at alta_sim.v(4091) has no driver
+Warning (10034): Output port "gpio4_io_out_en" at alta_sim.v(4092) has no driver
+Warning (10034): Output port "gpio5_io_out_data" at alta_sim.v(4094) has no driver
+Warning (10034): Output port "gpio5_io_out_en" at alta_sim.v(4095) has no driver
+Warning (10034): Output port "gpio6_io_out_data" at alta_sim.v(4097) has no driver
+Warning (10034): Output port "gpio6_io_out_en" at alta_sim.v(4098) has no driver
+Warning (10034): Output port "gpio7_io_out_data" at alta_sim.v(4100) has no driver
+Warning (10034): Output port "gpio7_io_out_en" at alta_sim.v(4101) has no driver
+Warning (10034): Output port "gpio8_io_out_data" at alta_sim.v(4103) has no driver
+Warning (10034): Output port "gpio8_io_out_en" at alta_sim.v(4104) has no driver
+Warning (10034): Output port "gpio9_io_out_data" at alta_sim.v(4106) has no driver
+Warning (10034): Output port "gpio9_io_out_en" at alta_sim.v(4107) has no driver
+Warning (10034): Output port "swj_JTAGSTATE" at alta_sim.v(4112) has no driver
+Warning (10034): Output port "swj_JTAGIR" at alta_sim.v(4113) has no driver
+Warning (10034): Output port "dmactive" at alta_sim.v(4110) has no driver
+Warning (10034): Output port "swj_JTAGNSW" at alta_sim.v(4111) has no driver
+Warning (12010): Port "inclk" on the entity instantiation of "pll_inst" is connected to a signal of width 1. The formal width of the signal in the module is 2.  The extra bits will be driven by GND.
+Info (12206): 2 design partitions require synthesis
+    Info (12210): Partition "Top" requires synthesis because its netlist type is Source File
+    Info (12210): Partition "rv32" requires synthesis because its netlist type is Source File
+Info (12209): No design partitions will skip synthesis in the current incremental compilation
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (281037): Using 2 processors to synthesize 2 partitions in parallel
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Aug 10 18:14:22 2023
+Info: Command: quartus_map --parallel=1 --helper=0 --partition=Top example_board -c example_board
+Info (270000): Limiting DSP block usage to 0 DSP block(s) for the partition Top
+Info (270017): Limiting M4K/M9K RAM block usage to 4 M4K/M9K RAM block(s) for the Top
+Info (270017): Limiting M4K/M9K RAM block usage to 4 M4K/M9K RAM block(s) for the Top
+Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
+Info (17026): Resynthesizing 0 WYSIWYG logic cells and I/Os using "balanced" technology mapper which leaves 0 WYSIWYG logic cells and I/Os untouched
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "mem_ahb_hreadyout"
+    Info (17048): Logic cell "slave_ahb_hready"
+    Info (17048): Logic cell "sys_ctrl_clkSource[0]"
+    Info (17048): Logic cell "sys_ctrl_clkSource[1]"
+    Info (17048): Logic cell "PLL_ENABLE"
+Warning (15899): PLL "altpll:pll_inst|altpll_2ct1:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected
+Info (128000): Starting physical synthesis optimizations for speed
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 3 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):  125.000      PIN_HSE
+    Info (332111):  100.000      PIN_HSI
+    Info (332111):   10.000 pll_inst|auto_generated|pll1|clk[0]
+Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
+Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
+Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:01
+Info (21057): Implemented 251 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 243 logic cells
+    Info (21065): Implemented 1 PLLs
+    Info (21071): Implemented 1 partitions
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4678 megabytes
+    Info: Processing ended: Thu Aug 10 18:14:26 2023
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:06
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Aug 10 18:14:22 2023
+Info: Command: quartus_map --parallel=1 --helper=1 --partition=rv32 example_board -c example_board
+Info (270000): Limiting DSP block usage to 0 DSP block(s) for the partition alta_rv32:rv32
+Info (270017): Limiting M4K/M9K RAM block usage to 4 M4K/M9K RAM block(s) for the alta_rv32:rv32
+Info (270017): Limiting M4K/M9K RAM block usage to 4 M4K/M9K RAM block(s) for the alta_rv32:rv32
+Info (281019): Starting Logic Optimization and Technology Mapping for Partition rv32
+Info (17026): Resynthesizing 0 WYSIWYG logic cells and I/Os using "balanced" technology mapper which leaves 0 WYSIWYG logic cells and I/Os untouched
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio0_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio1_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio2_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio3_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio4_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio5_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio6_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio7_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio8_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_data[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[4]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[5]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[6]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|gpio9_io_out_en[7]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|dmactive" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGNSW" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGSTATE[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGSTATE[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGSTATE[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGSTATE[3]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGIR[0]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGIR[1]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGIR[2]" is stuck at GND
+    Warning (13410): Pin "alta_rv32:rv32|swj_JTAGIR[3]" is stuck at GND
+Info (128000): Starting physical synthesis optimizations for speed
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 3 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):  125.000      PIN_HSE
+    Info (332111):  100.000      PIN_HSI
+    Info (332111):   10.000 pll_inst|auto_generated|pll1|clk[0]
+Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
+Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
+Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:01
+Info (21057): Implemented 520 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 224 input pins
+    Info (21059): Implemented 295 output pins
+    Info (21061): Implemented 1 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 171 warnings
+    Info: Peak virtual memory: 4679 megabytes
+    Info: Processing ended: Thu Aug 10 18:14:25 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:06
+Info (281038): Finished parallel synthesis of all partitions
+Info (144001): Generated suppressed messages file D:/agmWork/AgRV_pio/platforms/AgRV/examples/example_fredLogic/logic/quartus_logs/example_board.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 228 warnings
+    Info: Peak virtual memory: 4607 megabytes
+    Info: Processing ended: Thu Aug 10 18:14:27 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:10
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/agmWork/AgRV_pio/platforms/AgRV/examples/example_fredLogic/logic/quartus_logs/example_board.map.smsg.
+
+

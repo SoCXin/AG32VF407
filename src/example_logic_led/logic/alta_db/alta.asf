@@ -1,0 +1,5 @@
+set_instance_assignment -name ENABLE_OPEN_DRAIN -to PIN_32~output false
+set_instance_assignment -name ENABLE_OPEN_DRAIN -to PIN_31~output false
+set_instance_assignment -name CLKIN_FREQ -extension -to pll_inst|auto_generated|pll1 8
+set_instance_assignment -extension -name FIXED_COORD -to gclksw_inst|gclk_switch__alta_gclksw {22 4 0}
+set_instance_assignment -extension -name FIXED_COORD -to gclksw_inst|gclk_switch {22 4 5}

@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 6.976
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'PIN_HSI'
+Slack : 96.976
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'PIN_HSE'
+Slack : 121.976
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'PIN_HSE'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'PIN_HSI'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 4.654
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PIN_HSI'
+Slack : 49.780
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PIN_HSE'
+Slack : 62.280
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 7.334
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'PIN_HSI'
+Slack : 97.334
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'PIN_HSE'
+Slack : 122.334
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'PIN_HSE'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'PIN_HSI'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 4.638
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PIN_HSI'
+Slack : 49.763
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PIN_HSE'
+Slack : 62.263
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 8.656
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'PIN_HSI'
+Slack : 98.656
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'PIN_HSE'
+Slack : 123.656
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'PIN_HSE'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'PIN_HSI'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pll_inst|auto_generated|pll1|clk[0]'
+Slack : 4.777
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PIN_HSI'
+Slack : 49.254
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PIN_HSE'
+Slack : 61.754
+TNS   : 0.000
+
+------------------------------------------------------------

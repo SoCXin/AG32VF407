@@ -1,0 +1,110 @@
+=== User constraints ===
+Fmax report
+  User constraint:   8.000MHz, Fmax: 303.952MHz, Clock: PIN_HSE
+  User constraint:  10.000MHz, Fmax: 303.951MHz, Clock: PIN_HSI
+  User constraint: 100.000MHz, Fmax: 303.951MHz, Clock: pll_inst|auto_generated|pll1|clk[0]
+
+Clock transfer report:
+  Worst setup: 121.710, with clock PIN_HSE
+  Worst setup:  96.710, with clock PIN_HSI
+  Worst setup:   6.710, with clock pll_inst|auto_generated|pll1|clk[0]
+
+
+=== Auto constraints ===
+
+
+Coverage report
+  User constraints covered 90 connections out of 98 total, coverage: 91.8%
+  Auto constraints covered 90 connections out of 98 total, coverage: 91.8%
+
+
+Setup from macro_inst|led_output|clkcount[1] to macro_inst|led_output|clkcount[24], clock pll_inst|auto_generated|pll1|clk[0], constraint 10.000
+  Slack:   6.710
+    Arrival Time:    3.554
+        0.000    0.000   R                         Launch Clock Edge
+      Launch Clock Path:
+        0.000    0.000   RR                              top|PIN_HSE =>                      PIN_HSE~input|padio 
+        1.309    1.309   RR                      PIN_HSE~input|padio =>                    PIN_HSE~input|combout 
+        1.546    0.237   RR                    PIN_HSE~input|combout =>       pll_inst|auto_generated|pll1|clkin 
+      Compensation Path:
+       -2.390   -3.936   RR       pll_inst|auto_generated|pll1|clkfb =>    pll_inst|auto_generated|pll1|clkfbout 
+       -2.390   -0.000   RR    pll_inst|auto_generated|pll1|clkfbout =>       pll_inst|auto_generated|pll1|clkfb 
+      Compensation Path End
+       -1.410    0.980   RR       pll_inst|auto_generated|pll1|clkin =>     pll_inst|auto_generated|pll1|clkout0 D
+       -1.410    0.000   RR     pll_inst|auto_generated|pll1|clkout0 => gclksw_inst|gclk_switch__alta_gclksw|clkin2 D
+       -1.008    0.402   RR gclksw_inst|gclk_switch__alta_gclksw|clkin2 => gclksw_inst|gclk_switch__alta_gclksw|clkout 
+       -0.895    0.113   RR gclksw_inst|gclk_switch__alta_gclksw|clkout =>            gclksw_inst|gclk_switch|inclk 
+       -0.895    0.000   RR            gclksw_inst|gclk_switch|inclk =>           gclksw_inst|gclk_switch|outclk 
+        0.656    1.551   RR           gclksw_inst|gclk_switch|outclk =>               clken_ctrl_X49_Y2_N0|ClkIn 
+        0.804    0.148   RR               clken_ctrl_X49_Y2_N0|ClkIn =>              clken_ctrl_X49_Y2_N0|ClkOut 
+        0.937    0.133   RR              clken_ctrl_X49_Y2_N0|ClkOut =>    macro_inst|led_output|clkcount[1]|Clk 
+      Data Path:
+        1.152    0.215   RR    macro_inst|led_output|clkcount[1]|Clk =>      macro_inst|led_output|clkcount[1]|Q D
+        1.553    0.401   RR      macro_inst|led_output|clkcount[1]|Q =>      macro_inst|led_output|clkcount[1]|A E
+        2.113    0.560   RR      macro_inst|led_output|clkcount[1]|A =>   macro_inst|led_output|clkcount[1]|Cout 
+        2.113    0.000   RR   macro_inst|led_output|clkcount[1]|Cout =>    macro_inst|led_output|clkcount[2]|Cin E
+        2.178    0.065   RF    macro_inst|led_output|clkcount[2]|Cin =>   macro_inst|led_output|clkcount[2]|Cout 
+        2.178    0.000   FF   macro_inst|led_output|clkcount[2]|Cout =>    macro_inst|led_output|clkcount[3]|Cin E
+        2.244    0.066   FR    macro_inst|led_output|clkcount[3]|Cin =>   macro_inst|led_output|clkcount[3]|Cout 
+        2.244    0.000   RR   macro_inst|led_output|clkcount[3]|Cout =>    macro_inst|led_output|clkcount[4]|Cin E
+        2.309    0.065   RF    macro_inst|led_output|clkcount[4]|Cin =>   macro_inst|led_output|clkcount[4]|Cout 
+        2.309    0.000   FF   macro_inst|led_output|clkcount[4]|Cout =>    macro_inst|led_output|clkcount[5]|Cin E
+        2.375    0.066   FR    macro_inst|led_output|clkcount[5]|Cin =>   macro_inst|led_output|clkcount[5]|Cout 
+        2.375    0.000   RR   macro_inst|led_output|clkcount[5]|Cout =>    macro_inst|led_output|clkcount[6]|Cin E
+        2.440    0.065   RF    macro_inst|led_output|clkcount[6]|Cin =>   macro_inst|led_output|clkcount[6]|Cout 
+        2.440    0.000   FF   macro_inst|led_output|clkcount[6]|Cout =>    macro_inst|led_output|clkcount[7]|Cin E
+        2.506    0.066   FR    macro_inst|led_output|clkcount[7]|Cin =>   macro_inst|led_output|clkcount[7]|Cout 
+        2.506    0.000   RR   macro_inst|led_output|clkcount[7]|Cout =>    macro_inst|led_output|clkcount[8]|Cin E
+        2.571    0.065   RF    macro_inst|led_output|clkcount[8]|Cin =>   macro_inst|led_output|clkcount[8]|Cout 
+        2.571    0.000   FF   macro_inst|led_output|clkcount[8]|Cout =>    macro_inst|led_output|clkcount[9]|Cin E
+        2.637    0.066   FR    macro_inst|led_output|clkcount[9]|Cin =>   macro_inst|led_output|clkcount[9]|Cout 
+        2.637    0.000   RR   macro_inst|led_output|clkcount[9]|Cout =>   macro_inst|led_output|clkcount[10]|Cin E
+        2.702    0.065   RF   macro_inst|led_output|clkcount[10]|Cin =>  macro_inst|led_output|clkcount[10]|Cout 
+        2.702    0.000   FF  macro_inst|led_output|clkcount[10]|Cout =>   macro_inst|led_output|clkcount[11]|Cin E
+        2.768    0.066   FR   macro_inst|led_output|clkcount[11]|Cin =>  macro_inst|led_output|clkcount[11]|Cout 
+        2.768    0.000   RR  macro_inst|led_output|clkcount[11]|Cout =>   macro_inst|led_output|clkcount[12]|Cin E
+        2.833    0.065   RF   macro_inst|led_output|clkcount[12]|Cin =>  macro_inst|led_output|clkcount[12]|Cout 
+        2.833    0.000   FF  macro_inst|led_output|clkcount[12]|Cout =>   macro_inst|led_output|clkcount[13]|Cin E
+        2.899    0.066   FR   macro_inst|led_output|clkcount[13]|Cin =>  macro_inst|led_output|clkcount[13]|Cout 
+        2.899    0.000   RR  macro_inst|led_output|clkcount[13]|Cout =>   macro_inst|led_output|clkcount[14]|Cin E
+        2.964    0.065   RF   macro_inst|led_output|clkcount[14]|Cin =>  macro_inst|led_output|clkcount[14]|Cout 
+        2.964    0.000   FF  macro_inst|led_output|clkcount[14]|Cout =>   macro_inst|led_output|clkcount[15]|Cin E
+        3.030    0.066   FR   macro_inst|led_output|clkcount[15]|Cin =>  macro_inst|led_output|clkcount[15]|Cout 
+        3.030    0.000   RR  macro_inst|led_output|clkcount[15]|Cout =>   macro_inst|led_output|clkcount[16]|Cin E
+        3.095    0.065   RF   macro_inst|led_output|clkcount[16]|Cin =>  macro_inst|led_output|clkcount[16]|Cout 
+        3.095    0.000   FF  macro_inst|led_output|clkcount[16]|Cout =>   macro_inst|led_output|clkcount[17]|Cin E
+        3.161    0.066   FR   macro_inst|led_output|clkcount[17]|Cin =>  macro_inst|led_output|clkcount[17]|Cout 
+        3.161    0.000   RR  macro_inst|led_output|clkcount[17]|Cout =>   macro_inst|led_output|clkcount[18]|Cin E
+        3.226    0.065   RF   macro_inst|led_output|clkcount[18]|Cin =>  macro_inst|led_output|clkcount[18]|Cout 
+        3.226    0.000   FF  macro_inst|led_output|clkcount[18]|Cout =>   macro_inst|led_output|clkcount[19]|Cin E
+        3.292    0.066   FR   macro_inst|led_output|clkcount[19]|Cin =>  macro_inst|led_output|clkcount[19]|Cout 
+        3.292    0.000   RR  macro_inst|led_output|clkcount[19]|Cout =>   macro_inst|led_output|clkcount[20]|Cin E
+        3.357    0.065   RF   macro_inst|led_output|clkcount[20]|Cin =>  macro_inst|led_output|clkcount[20]|Cout 
+        3.357    0.000   FF  macro_inst|led_output|clkcount[20]|Cout =>   macro_inst|led_output|clkcount[21]|Cin E
+        3.423    0.066   FR   macro_inst|led_output|clkcount[21]|Cin =>  macro_inst|led_output|clkcount[21]|Cout 
+        3.423    0.000   RR  macro_inst|led_output|clkcount[21]|Cout =>   macro_inst|led_output|clkcount[22]|Cin E
+        3.488    0.065   RF   macro_inst|led_output|clkcount[22]|Cin =>  macro_inst|led_output|clkcount[22]|Cout 
+        3.488    0.000   FF  macro_inst|led_output|clkcount[22]|Cout =>   macro_inst|led_output|clkcount[23]|Cin E
+        3.554    0.066   FR   macro_inst|led_output|clkcount[23]|Cin =>  macro_inst|led_output|clkcount[23]|Cout 
+        3.554    0.000   RR  macro_inst|led_output|clkcount[23]|Cout =>   macro_inst|led_output|clkcount[24]|Cin E
+    Required Time:  10.264
+       10.000   10.000   R                          Latch Clock Edge
+      Latch Clock Path:
+       10.000    0.000   RR                              top|PIN_HSE =>                      PIN_HSE~input|padio 
+       11.309    1.309   RR                      PIN_HSE~input|padio =>                    PIN_HSE~input|combout 
+       11.536    0.227   RR                    PIN_HSE~input|combout =>       pll_inst|auto_generated|pll1|clkin 
+      Compensation Path:
+        7.600   -3.936   RR       pll_inst|auto_generated|pll1|clkfb =>    pll_inst|auto_generated|pll1|clkfbout 
+        7.600   -0.000   RR    pll_inst|auto_generated|pll1|clkfbout =>       pll_inst|auto_generated|pll1|clkfb 
+      Compensation Path End
+        8.580    0.980   RR       pll_inst|auto_generated|pll1|clkin =>     pll_inst|auto_generated|pll1|clkout0 D
+        8.580    0.000   RR     pll_inst|auto_generated|pll1|clkout0 => gclksw_inst|gclk_switch__alta_gclksw|clkin2 D
+        8.982    0.402   RR gclksw_inst|gclk_switch__alta_gclksw|clkin2 => gclksw_inst|gclk_switch__alta_gclksw|clkout 
+        9.095    0.113   RR gclksw_inst|gclk_switch__alta_gclksw|clkout =>            gclksw_inst|gclk_switch|inclk 
+        9.095    0.000   RR            gclksw_inst|gclk_switch|inclk =>           gclksw_inst|gclk_switch|outclk 
+       10.605    1.510   RR           gclksw_inst|gclk_switch|outclk =>               clken_ctrl_X49_Y1_N0|ClkIn 
+       10.753    0.148   RR               clken_ctrl_X49_Y1_N0|ClkIn =>              clken_ctrl_X49_Y1_N0|ClkOut 
+       10.884    0.131   RR              clken_ctrl_X49_Y1_N0|ClkOut =>   macro_inst|led_output|clkcount[24]|Clk 
+       10.254   -0.630   R                                     Setup
+       10.264    0.010                               Clock Variation
+

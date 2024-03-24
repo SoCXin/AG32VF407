@@ -1,0 +1,45 @@
+=== User constraints ===
+
+Clock transfer report:
+  Worst  hold:   0.615, with clock PIN_HSE
+  Worst  hold:   0.615, with clock PIN_HSI
+  Worst  hold:   0.615, with clock pll_inst|auto_generated|pll1|clk[0]
+
+=== Auto constraints ===
+Coverage report
+  User constraints covered 90 connections out of 98 total, coverage: 91.8%
+  Auto constraints covered 90 connections out of 98 total, coverage: 91.8%
+
+
+Hold from macro_inst|led_output|LED_2 to macro_inst|led_output|LED_2, clock PIN_HSI, constraint 0.000
+  Slack:   0.615
+    Arrival Time:    3.828
+        0.000    0.000   R                         Launch Clock Edge
+      Launch Clock Path:
+        0.000    0.000   RR                              top|PIN_HSI =>                      PIN_HSI~input|padio 
+        1.309    1.309   RR                      PIN_HSI~input|padio =>                    PIN_HSI~input|combout 
+        1.309    0.000   RR                    PIN_HSI~input|combout => gclksw_inst|gclk_switch__alta_gclksw|clkin0 
+        1.711    0.402   RR gclksw_inst|gclk_switch__alta_gclksw|clkin0 => gclksw_inst|gclk_switch__alta_gclksw|clkout 
+        1.824    0.113   RR gclksw_inst|gclk_switch__alta_gclksw|clkout =>            gclksw_inst|gclk_switch|inclk 
+        1.824    0.000   RR            gclksw_inst|gclk_switch|inclk =>           gclksw_inst|gclk_switch|outclk 
+        3.334    1.510   RR           gclksw_inst|gclk_switch|outclk =>               clken_ctrl_X49_Y1_N0|ClkIn 
+        3.482    0.148   RR               clken_ctrl_X49_Y1_N0|ClkIn =>              clken_ctrl_X49_Y1_N0|ClkOut 
+        3.613    0.131   RR              clken_ctrl_X49_Y1_N0|ClkOut =>          macro_inst|led_output|LED_2|Clk 
+      Data Path:
+        3.828    0.215   RR          macro_inst|led_output|LED_2|Clk =>            macro_inst|led_output|LED_2|Q D
+        3.828    0.000   RR            macro_inst|led_output|LED_2|Q =>          macro_inst|led_output|LED_2|Qin E
+    Required Time:   3.213
+        0.000    0.000   R                          Latch Clock Edge
+      Latch Clock Path:
+        0.000    0.000   RR                              top|PIN_HSI =>                      PIN_HSI~input|padio 
+        1.309    1.309   RR                      PIN_HSI~input|padio =>                    PIN_HSI~input|combout 
+        1.309    0.000   RR                    PIN_HSI~input|combout => gclksw_inst|gclk_switch__alta_gclksw|clkin0 
+        1.711    0.402   RR gclksw_inst|gclk_switch__alta_gclksw|clkin0 => gclksw_inst|gclk_switch__alta_gclksw|clkout 
+        1.824    0.113   RR gclksw_inst|gclk_switch__alta_gclksw|clkout =>            gclksw_inst|gclk_switch|inclk 
+        1.824    0.000   RR            gclksw_inst|gclk_switch|inclk =>           gclksw_inst|gclk_switch|outclk 
+        3.375    1.551   RR           gclksw_inst|gclk_switch|outclk =>               clken_ctrl_X49_Y1_N0|ClkIn 
+        3.523    0.148   RR               clken_ctrl_X49_Y1_N0|ClkIn =>              clken_ctrl_X49_Y1_N0|ClkOut 
+        3.656    0.133   RR              clken_ctrl_X49_Y1_N0|ClkOut =>          macro_inst|led_output|LED_2|Clk 
+        3.256   -0.400   R                                      Hold
+        3.213   -0.043                               Clock Variation
+

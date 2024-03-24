@@ -1,0 +1,5 @@
+# pio_begin  >>>>>> DO NOT MODIFY THIS SECTION! >>>>>>
+set db_io_name_priority true
+set ip_pll_vco_lowpower true
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION "OFF"
+# pio_end    <<<<<< DO NOT MODIFY THIS SECTION! <<<<<<

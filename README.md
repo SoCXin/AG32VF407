@@ -30,8 +30,8 @@
 
 ### 下载调试
 
-* 使用jlink v9及以上版本；
-
+* 使用jlink V9及以上版本；
+* AGM BLASTER
 
 ## [选型建议](https://github.com/SoCXin)
 

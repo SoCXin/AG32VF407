@@ -1,0 +1,10 @@
+set_location_assignment -to PIN_31 PIN_31
+set_location_assignment -to PIN_32 PIN_32
+set_location_assignment -to PIN_HSE PIN_HSE
+set_location_assignment -to PIN_HSI PIN_HSI
+set_location_assignment -to PIN_OSC PIN_OSC
+set_instance_assignment -name IO_STANDARD -to PIN_31 "3.3-V LVTTL"
+set_instance_assignment -name IO_STANDARD -to PIN_32 "3.3-V LVTTL"
+set_instance_assignment -name IO_STANDARD -to PIN_HSE "3.3-V LVTTL"
+set_instance_assignment -name IO_STANDARD -to PIN_HSI "3.3-V LVTTL"
+set_instance_assignment -name IO_STANDARD -to PIN_OSC "3.3-V LVTTL"

@@ -1,0 +1,1 @@
+set_global_assignment -name DEVICE_IO_STANDARD "3.3-V LVTTL"

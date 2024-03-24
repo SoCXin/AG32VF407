@@ -1,0 +1,699 @@
+Partition Merge report for example_board
+Thu Aug 10 18:14:30 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Warnings
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Partition Pin Processing
+  7. Partition Merge Resource Usage Summary
+  8. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                               ;
++------------------------------------+--------------------------------------------------+
+; Partition Merge Status             ; Successful - Thu Aug 10 18:14:30 2023            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; example_board                                    ;
+; Top-level Entity Name              ; top                                              ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 244                                              ;
+;     Total combinational functions  ; 243                                              ;
+;     Dedicated logic registers      ; 28                                               ;
+; Total registers                    ; 28                                               ;
+; Total pins                         ; 5                                                ;
+; Total virtual pins                 ; 1                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 1                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Source File            ;                                ;
+; rv32                           ; User-created   ; Source File       ; Source File            ; alta_rv32:rv32                 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++-------------------------------------------------------------+
+; Partition Merge Partition Warnings                          ;
++-------------------------------------+-----------+-----------+
+; Port                                ; Partition ; Info      ;
++-------------------------------------+-----------+-----------+
+; alta_rv32:rv32|sys_clk              ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hready       ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_htrans[0]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_htrans[1]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hsize[0]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hsize[1]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hsize[2]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hburst[0]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hburst[1]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hburst[2]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwrite       ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[0]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[1]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[2]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[3]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[4]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[5]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[6]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[7]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[8]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[9]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[10]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[11]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[12]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[13]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[14]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[15]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[16]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[17]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[18]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[19]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[20]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[21]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[22]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[23]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[24]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[25]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[26]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[27]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[28]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[29]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[30]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_haddr[31]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[0]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[1]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[2]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[3]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[4]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[5]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[6]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[7]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[8]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[9]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[10]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[11]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[12]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[13]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[14]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[15]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[16]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[17]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[18]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[19]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[20]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[21]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[22]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[23]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[24]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[25]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[26]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[27]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[28]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[29]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[30]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hwdata[31]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|mem_ahb_hresp        ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hsel       ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hreadyout  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_htrans[0]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_htrans[1]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hsize[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hsize[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hsize[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hburst[0]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hburst[1]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hburst[2]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hwrite     ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[8]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[9]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[10]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[11]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[12]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[13]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[14]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[15]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[16]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[17]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[18]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[19]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[20]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[21]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[22]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[23]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[24]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[25]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[26]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[27]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[28]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[29]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[30]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_haddr[31]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hresp      ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[0]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[1]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[2]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[3]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[4]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[5]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[6]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[7]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[8]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[9]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[10] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[11] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[12] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[13] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[14] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[15] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[16] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[17] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[18] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[19] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[20] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[21] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[22] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[23] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[24] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[25] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[26] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[27] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[28] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[29] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[30] ; rv32      ; No fanout ;
+; alta_rv32:rv32|slave_ahb_hrdata[31] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio0_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio1_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|sys_ctrl_hseEnable   ; rv32      ; No fanout ;
+; alta_rv32:rv32|sys_ctrl_hseBypass   ; rv32      ; No fanout ;
+; alta_rv32:rv32|sys_ctrl_sleep       ; rv32      ; No fanout ;
+; alta_rv32:rv32|sys_ctrl_stop        ; rv32      ; No fanout ;
+; alta_rv32:rv32|sys_ctrl_standby     ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio2_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio3_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio4_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio5_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio6_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio7_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio8_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[0]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[1]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[2]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[3]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[4]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[5]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[6]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_in[7]       ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[4] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[5] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[6] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_data[7] ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[4]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[5]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[6]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|gpio9_io_out_en[7]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|resetn_out           ; rv32      ; No fanout ;
+; alta_rv32:rv32|dmactive             ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGNSW          ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGSTATE[0]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGSTATE[1]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGSTATE[2]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGSTATE[3]     ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGIR[0]        ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGIR[1]        ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGIR[2]        ; rv32      ; No fanout ;
+; alta_rv32:rv32|swj_JTAGIR[3]        ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[0]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[1]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[2]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[3]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[4]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[5]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[6]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_int[7]           ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLBREQ[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLBREQ[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLBREQ[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLBREQ[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACSREQ[0]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACSREQ[1]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACSREQ[2]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACSREQ[3]  ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLSREQ[0] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLSREQ[1] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLSREQ[2] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACLSREQ[3] ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACCLR[0]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACCLR[1]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACCLR[2]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACCLR[3]   ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACTC[0]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACTC[1]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACTC[2]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|ext_dma_DMACTC[3]    ; rv32      ; No fanout ;
+; alta_rv32:rv32|local_int[0]         ; rv32      ; No fanout ;
+; alta_rv32:rv32|local_int[1]         ; rv32      ; No fanout ;
+; alta_rv32:rv32|local_int[2]         ; rv32      ; No fanout ;
+; alta_rv32:rv32|local_int[3]         ; rv32      ; No fanout ;
+; alta_rv32:rv32|test_mode[0]         ; rv32      ; No fanout ;
+; alta_rv32:rv32|test_mode[1]         ; rv32      ; No fanout ;
+; alta_rv32:rv32|usb0_xcvr_clk        ; rv32      ; No fanout ;
+; alta_rv32:rv32|usb0_id              ; rv32      ; No fanout ;
++-------------------------------------+-----------+-----------+
+Note: The Incremental Compilation Advisor can be used to get more detailed recommendations.
+
+
++-------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                      ;
++---------------------------------------------+-----+------+--------------------------------+
+; Statistic                                   ; Top ; rv32 ; hard_block:auto_generated_inst ;
++---------------------------------------------+-----+------+--------------------------------+
+; Estimated Total logic elements              ; 243 ; 1    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Total combinational functions               ; 242 ; 1    ; 0                              ;
+; Logic element usage by number of LUT inputs ;     ;      ;                                ;
+;     -- 4 input functions                    ; 0   ; 0    ; 0                              ;
+;     -- 3 input functions                    ; 3   ; 0    ; 0                              ;
+;     -- <=2 input functions                  ; 239 ; 1    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Logic elements by mode                      ;     ;      ;                                ;
+;     -- normal mode                          ; 219 ; 1    ; 0                              ;
+;     -- arithmetic mode                      ; 23  ; 0    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Total registers                             ; 28  ; 0    ; 0                              ;
+;     -- Dedicated logic registers            ; 28  ; 0    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Virtual pins                                ; 0   ; 1    ; 0                              ;
+; I/O pins                                    ; 5   ; 0    ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0   ; 0    ; 0                              ;
+; Total memory bits                           ; 0   ; 0    ; 0                              ;
+; Total RAM block bits                        ; 0   ; 0    ; 0                              ;
+; PLL                                         ; 0   ; 0    ; 1                              ;
+;                                             ;     ;      ;                                ;
+; Connections                                 ;     ;      ;                                ;
+;     -- Input Connections                    ; 32  ; 1    ; 6                              ;
+;     -- Registered Input Connections         ; 28  ; 0    ; 0                              ;
+;     -- Output Connections                   ; 9   ; 0    ; 30                             ;
+;     -- Registered Output Connections        ; 0   ; 0    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Internal Connections                        ;     ;      ;                                ;
+;     -- Total Connections                    ; 129 ; 1    ; 38                             ;
+;     -- Registered Connections               ; 63  ; 0    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; External Connections                        ;     ;      ;                                ;
+;     -- Top                                  ; 6   ; 0    ; 35                             ;
+;     -- rv32                                 ; 0   ; 0    ; 1                              ;
+;     -- hard_block:auto_generated_inst       ; 35  ; 1    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Partition Interface                         ;     ;      ;                                ;
+;     -- Input Ports                          ; 3   ; 224  ; 6                              ;
+;     -- Output Ports                         ; 2   ; 295  ; 2                              ;
+;     -- Bidir Ports                          ; 0   ; 0    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Registered Ports                            ;     ;      ;                                ;
+;     -- Registered Input Ports               ; 0   ; 0    ; 0                              ;
+;     -- Registered Output Ports              ; 0   ; 0    ; 0                              ;
+;                                             ;     ;      ;                                ;
+; Port Connectivity                           ;     ;      ;                                ;
+;     -- Input Ports driven by GND            ; 0   ; 218  ; 0                              ;
+;     -- Output Ports driven by GND           ; 0   ; 170  ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0   ; 4    ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0   ; 0    ; 0                              ;
+;     -- Input Ports with no Source           ; 0   ; 0    ; 0                              ;
+;     -- Output Ports with no Source          ; 0   ; 0    ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0   ; 151  ; 1                              ;
+;     -- Output Ports with no Fanout          ; 0   ; 292  ; 0                              ;
++---------------------------------------------+-----+------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++---------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                  ;
++----------------------+-----------+---------------+----------+-------------+
+; Name                 ; Partition ; Type          ; Location ; Status      ;
++----------------------+-----------+---------------+----------+-------------+
+; PIN_31               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- PIN_31        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- PIN_31~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                      ;           ;               ;          ;             ;
+; PIN_32               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- PIN_32        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- PIN_32~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                      ;           ;               ;          ;             ;
+; PIN_HSE              ; Top       ; Input Port    ; n/a      ;             ;
+;     -- PIN_HSE       ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- PIN_HSE~input ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                      ;           ;               ;          ;             ;
+; PIN_HSI              ; Top       ; Input Port    ; n/a      ;             ;
+;     -- PIN_HSI       ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- PIN_HSI~input ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                      ;           ;               ;          ;             ;
+; PIN_OSC              ; Top       ; Input Port    ; n/a      ;             ;
+;     -- PIN_OSC       ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- PIN_OSC~input ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                      ;           ;               ;          ;             ;
++----------------------+-----------+---------------+----------+-------------+
+
+
++------------------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                                       ;
++---------------------------------------------+--------------------------------+
+; Resource                                    ; Usage                          ;
++---------------------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 244                            ;
+;                                             ;                                ;
+; Total combinational functions               ; 243                            ;
+; Logic element usage by number of LUT inputs ;                                ;
+;     -- 4 input functions                    ; 0                              ;
+;     -- 3 input functions                    ; 3                              ;
+;     -- <=2 input functions                  ; 240                            ;
+;                                             ;                                ;
+; Logic elements by mode                      ;                                ;
+;     -- normal mode                          ; 220                            ;
+;     -- arithmetic mode                      ; 23                             ;
+;                                             ;                                ;
+; Total registers                             ; 28                             ;
+;     -- Dedicated logic registers            ; 28                             ;
+;     -- I/O registers                        ; 0                              ;
+;                                             ;                                ;
+; Virtual pins                                ; 1                              ;
+; I/O pins                                    ; 5                              ;
+; Embedded Multiplier 9-bit elements          ; 0                              ;
+; Total PLLs                                  ; 1                              ;
+;     -- PLLs                                 ; 1                              ;
+;                                             ;                                ;
+; Maximum fan-out node                        ; alta_gclksw:gclksw_inst|clkout ;
+; Maximum fan-out                             ; 28                             ;
+; Total fan-out                               ; 132                            ;
+; Average fan-out                             ; 0.46                           ;
++---------------------------------------------+--------------------------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Partition Merge
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Aug 10 18:14:28 2023
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off example_board -c example_board --merge=on
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "rv32"
+Info (35002): Resolved and merged 2 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 2 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Info (35047): Found 444 ports with no fan-out. For more information, refer to the Partition Merger report
+Warning (35016): Found partition port(s) not driving logic, possibly wasting area
+    Warning (35017): Partition port "alta_rv32:rv32|sys_clk", driven by node "alta_gclksw:gclksw_inst|gclk_switch", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|sys_ctrl_standby", driven by node "PLL_LOCK", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|sys_ctrl_stop", driven by node "PLL_LOCK", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|sys_ctrl_sleep", driven by node "PLL_LOCK", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|sys_ctrl_hseBypass", driven by node "PLL_LOCK", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|sys_ctrl_hseEnable", driven by node "PLL_LOCK", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACTC[0]", driven by node "ext_dma_DMACBREQ[0]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACCLR[0]", driven by node "ext_dma_DMACBREQ[0]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACTC[1]", driven by node "ext_dma_DMACBREQ[1]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACCLR[1]", driven by node "ext_dma_DMACBREQ[1]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACTC[2]", driven by node "ext_dma_DMACBREQ[2]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACCLR[2]", driven by node "ext_dma_DMACBREQ[2]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACTC[3]", driven by node "ext_dma_DMACBREQ[3]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACCLR[3]", driven by node "ext_dma_DMACBREQ[3]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACLBREQ[0]", driven by node "ext_dma_DMACLBREQ[0]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACLBREQ[1]", driven by node "ext_dma_DMACLBREQ[1]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACLBREQ[2]", driven by node "ext_dma_DMACLBREQ[2]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACLBREQ[3]", driven by node "ext_dma_DMACLBREQ[3]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACLSREQ[0]", driven by node "ext_dma_DMACLSREQ[0]", does not drive logic
+    Warning (35018): Partition port "alta_rv32:rv32|ext_dma_DMACLSREQ[1]", driven by node "ext_dma_DMACLSREQ[1]", does not drive logic
+    Warning (35039): Only the first 20 ports are reported. For a full list of ports, refer to the Partition Warnings panel in the Partition Merge report
+Warning (15899): PLL "altpll:pll_inst|altpll_2ct1:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "PIN_OSC"
+Info (21057): Implemented 252 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 245 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4627 megabytes
+    Info: Processing ended: Thu Aug 10 18:14:30 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
