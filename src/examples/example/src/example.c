@@ -52,6 +52,5 @@ int main(void)
   // TestWdog();
   // TestUart();
   // TestFlash();
-
   TestGpio();
 }
