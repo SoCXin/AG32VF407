@@ -1,0 +1,34 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '!src/example_logic_led/**'
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SOC_XIN_TOCKEN }}
+          sparse-checkout: |
+            .github
+            src
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -U https://github.com/OS-Q/pio/archive/main.zip
