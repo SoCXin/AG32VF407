@@ -1,0 +1,50 @@
+{
+    "type":"MCU",
+    "name":"AG32VF407",
+    "title": "ST AG32VF407",
+    "description":"ST Cortex-M0 MCU",
+    "version":"1.0.0",
+    "Core": {
+        "num": 1,
+        "type":"Cortex-M0",
+        "Freq": 64,
+        "DMIPS": 100,
+        "CoreMark": 160
+    },
+    "manufacturer": {
+        "vendor":"ST",
+        "homepage": "https://www.st.com.cn/zh/microcontrollers-microprocessors/AG32VF407gb.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SoCXin/AG32VF407.git"
+    },
+    "series":["AG32VF407","STM32G081"],
+    "package":["QFN28","QFN32","QFN48"],
+    "peripheral": ["TIM","ADC","USB","UART","SPI","LDO","PWM"],
+    "price":[4,8],
+    "PWR": {
+        "VDD": [2800,5000],
+        "Ivdd": 3.5,
+        "LDO": [5000,3300],
+        "rate": 1024
+    },
+    "EMC": {
+        "EFT": 2000,
+        "ESD": 4000
+    },
+    "upload": {
+        "ISP": true,
+        "IAP": true,
+        "SWD": true,
+        "speed": 115200
+    },
+    "keywords": [
+        "STM32",
+        "Cortex-M0",
+        "ST",
+        "AG32VF407",
+        "USB","ADC","USART","I2C","RTC","SPI",
+        "3.6V","1.7V"
+    ]
+}
